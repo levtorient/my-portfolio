@@ -1,0 +1,108 @@
+.floating-icons-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-icon {
+  position: absolute;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  color: var(--accent-primary);
+  will-change: transform, margin;
+  user-select: none;
+  animation: drift linear infinite;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: transform 0.05s linear;
+}
+
+.floating-icon--comet {
+  position: relative;
+  animation: cometGlow 3s ease-in-out infinite;
+  text-shadow:
+    0 0 10px var(--accent-primary),
+    0 0 20px var(--accent-primary),
+    0 0 30px var(--accent-primary);
+}
+
+.floating-icon--comet::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-primary), transparent);
+  transform-origin: left center;
+  animation: cometTail 2s ease-in-out infinite;
+  opacity: 0.6;
+  filter: blur(1px);
+}
+
+@keyframes cometGlow {
+  0%, 100% {
+    text-shadow:
+      0 0 5px var(--accent-primary),
+      0 0 10px var(--accent-primary);
+    opacity: inherit;
+  }
+  50% {
+    text-shadow:
+      0 0 15px var(--accent-primary),
+      0 0 30px var(--accent-primary),
+      0 0 45px var(--accent-primary);
+  }
+}
+
+@keyframes cometTail {
+  0%, 100% {
+    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg)) scaleX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg)) scaleX(3);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg)) scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes drift {
+  0%, 100% {
+    margin-top: 0;
+    margin-left: 0;
+  }
+  20% {
+    margin-top: -30px;
+    margin-left: 25px;
+  }
+  40% {
+    margin-top: 20px;
+    margin-left: -20px;
+  }
+  60% {
+    margin-top: -25px;
+    margin-left: -30px;
+  }
+  80% {
+    margin-top: 15px;
+    margin-left: 35px;
+  }
+}
+
+/* Accessibility - Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .floating-icon {
+    animation: none;
+  }
+}
