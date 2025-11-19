@@ -39,6 +39,7 @@
     transparent
   );
   transform: translateX(-50%);
+  z-index: 15;
 }
 
 /* Rocket */
@@ -53,8 +54,8 @@
 .rocket-icon {
   width: 28px;
   height: 28px;
-  color: var(--accent-primary);
-  filter: drop-shadow(0 0 8px var(--accent-primary));
+  color: #ff4444;
+  filter: drop-shadow(0 0 8px #ff4444);
   transform: rotate(0deg);
   animation: rocketBob 2s ease-in-out infinite;
 }
@@ -80,6 +81,7 @@
   border-radius: 20% 20% 50% 50%;
   opacity: 0.6;
   animation: flameIdle 1s ease-in-out infinite;
+  z-index: 20;
 }
 
 @keyframes flameIdle {

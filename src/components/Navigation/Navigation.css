@@ -50,6 +50,13 @@
   transition: color var(--transition-fast);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-icon {
+  font-size: var(--font-size-base);
 }
 
 .nav-link::after {

@@ -34,7 +34,7 @@ export default function Navigation() {
     <nav className={`navigation ${scrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <a href="/" className="nav-logo">
-          Portfolio
+          LM.
         </a>
         <ul className="nav-links">
           {navItems.map((item) => (

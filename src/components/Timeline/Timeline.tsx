@@ -36,11 +36,18 @@ export default function Timeline() {
   }
 
   // Calculate rocket position based on current index (vertical, bottom to top)
+  // Account for the 40px padding on the timeline-container
   const getRocketStyle = () => {
     const itemCount = timelineData.length
-    const percentage = 100 - (rocketIndex / (itemCount - 1)) * 100
+    const containerPadding = 40 // matches padding in Timeline.css
+    const containerHeight = 500 - (containerPadding * 2) // timeline-wrapper height minus padding
+
+    // Calculate position within the padded area
+    const positionInItems = rocketIndex / (itemCount - 1)
+    const pixelOffset = containerPadding + (positionInItems * containerHeight)
+
     return {
-      top: `${percentage}%`,
+      top: `${pixelOffset}px`,
     }
   }
 
