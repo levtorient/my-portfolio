@@ -5,18 +5,18 @@ import TimelineCard from './TimelineCard'
 import './Timeline.css'
 
 export default function Timeline() {
-  const [activeIndex, setActiveIndex] = useState<number>(0)
-  const [rocketIndex, setRocketIndex] = useState<number>(0)
+  const [activeIndex, setActiveIndex] = useState<number>(timelineData.length - 1)
+  const [rocketIndex, setRocketIndex] = useState<number>(timelineData.length - 1)
   const [isHovering, setIsHovering] = useState<boolean>(false)
   const timelineRef = useRef<HTMLDivElement>(null)
 
-  // Auto-run rocket animation when not hovering
+  // Auto-run rocket animation when not hovering (bottom to top)
   useEffect(() => {
     if (isHovering) return
 
     const interval = setInterval(() => {
       setRocketIndex(prev => {
-        const nextIndex = (prev + 1) % timelineData.length
+        const nextIndex = prev === 0 ? timelineData.length - 1 : prev - 1
         setActiveIndex(nextIndex)
         return nextIndex
       })
@@ -51,9 +51,9 @@ export default function Timeline() {
     }
   }
 
-  // Show initial card on mount
+  // Show initial card on mount (start from bottom)
   useEffect(() => {
-    setActiveIndex(0)
+    setActiveIndex(timelineData.length - 1)
   }, [])
 
   return (
