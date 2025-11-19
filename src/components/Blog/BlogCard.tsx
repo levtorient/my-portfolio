@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom'
-import { BlogPost } from './types'
+import { Link } from 'react-router-dom';
+import { BlogPost } from './types';
 
 interface BlogCardProps {
-  post: BlogPost
+  post: BlogPost;
 }
 
 export default function BlogCard({ post }: BlogCardProps) {
@@ -24,5 +24,5 @@ export default function BlogCard({ post }: BlogCardProps) {
         </div>
       </div>
     </Link>
-  )
+  );
 }

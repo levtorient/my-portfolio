@@ -1,7 +1,7 @@
 export interface NavItem {
-  id: string
-  label: string
-  icon: string
+  id: string;
+  label: string;
+  icon: string;
 }
 
 export const navItems: NavItem[] = [
@@ -10,4 +10,4 @@ export const navItems: NavItem[] = [
   { id: 'feedback', label: 'Feedback', icon: '💬' },
   { id: 'blog', label: 'Blog', icon: '📝' },
   { id: 'showcase', label: 'Showcase', icon: '🚀' },
-]
+];

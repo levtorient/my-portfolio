@@ -7,5 +7,5 @@ export default function ProfileCenter() {
         className="profile-image"
       />
     </div>
-  )
+  );
 }

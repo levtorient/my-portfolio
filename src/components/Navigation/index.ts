@@ -1,2 +1,2 @@
-export { default } from './Navigation'
-export * from './data'
+export { default } from './Navigation';
+export * from './data';

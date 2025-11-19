@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { feedbackData } from './data'
-import FeedbackAvatar from './FeedbackAvatar'
-import './Feedback.css'
+import { useState } from 'react';
+import { feedbackData } from './data';
+import FeedbackAvatar from './FeedbackAvatar';
+import './Feedback.css';
 
 export default function Feedback() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null)
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
     <section id="feedback" className="feedback-section">
@@ -23,5 +23,5 @@ export default function Feedback() {
         ))}
       </div>
     </section>
-  )
+  );
 }

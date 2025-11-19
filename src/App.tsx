@@ -1,8 +1,8 @@
-import { Routes, Route } from 'react-router-dom'
-import Navigation from './components/Navigation'
-import FloatingIcons from './components/FloatingIcons'
-import Home from './pages/Home'
-import BlogPost from './pages/BlogPost'
+import { Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import FloatingIcons from './components/FloatingIcons';
+import Home from './pages/Home';
+import BlogPost from './pages/BlogPost';
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogPost />} />
       </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

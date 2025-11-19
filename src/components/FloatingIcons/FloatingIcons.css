@@ -45,7 +45,8 @@
 }
 
 @keyframes cometGlow {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow:
       0 0 5px var(--accent-primary),
       0 0 10px var(--accent-primary);
@@ -60,25 +61,30 @@
 }
 
 @keyframes cometTail {
-  0%, 100% {
-    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg)) scaleX(0);
+  0%,
+  100% {
+    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg))
+      scaleX(0);
     opacity: 0;
   }
   20% {
     opacity: 0.8;
   }
   50% {
-    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg)) scaleX(3);
+    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg))
+      scaleX(3);
     opacity: 0.4;
   }
   100% {
-    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg)) scaleX(0);
+    transform: translate(-50%, -50%) rotate(var(--comet-tail-rotation, 225deg))
+      scaleX(0);
     opacity: 0;
   }
 }
 
 @keyframes drift {
-  0%, 100% {
+  0%,
+  100% {
     margin-top: 0;
     margin-left: 0;
   }

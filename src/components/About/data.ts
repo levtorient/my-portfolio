@@ -1,4 +1,4 @@
-import { OrbitInfo, BlankOrbit } from './types'
+import { OrbitInfo, BlankOrbit } from './types';
 
 export const blankOrbits: BlankOrbit[] = [
   {
@@ -53,7 +53,7 @@ export const blankOrbits: BlankOrbit[] = [
     rotationDirection: -1,
     opacity: 0.1,
   },
-]
+];
 
 export const orbitData: OrbitInfo[] = [
   {
@@ -118,4 +118,4 @@ export const orbitData: OrbitInfo[] = [
     rotationDuration: 50,
     rotationDirection: -1,
   },
-]
+];

@@ -1,8 +1,8 @@
-import { TimelineItem, CardPosition } from './types'
+import { TimelineItem, CardPosition } from './types';
 
 interface TimelineCardProps {
-  item: TimelineItem
-  position: CardPosition
+  item: TimelineItem;
+  position: CardPosition;
 }
 
 export default function TimelineCard({ item, position }: TimelineCardProps) {
@@ -35,5 +35,5 @@ export default function TimelineCard({ item, position }: TimelineCardProps) {
         ))}
       </div>
     </div>
-  )
+  );
 }

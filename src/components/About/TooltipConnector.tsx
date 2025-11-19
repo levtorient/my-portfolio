@@ -1,11 +1,14 @@
-import { LineCoords } from './types'
+import { LineCoords } from './types';
 
 interface TooltipConnectorProps {
-  lineCoords: LineCoords
-  color: string
+  lineCoords: LineCoords;
+  color: string;
 }
 
-export default function TooltipConnector({ lineCoords, color }: TooltipConnectorProps) {
+export default function TooltipConnector({
+  lineCoords,
+  color,
+}: TooltipConnectorProps) {
   return (
     <svg
       className="tooltip-connector"
@@ -44,5 +47,5 @@ export default function TooltipConnector({ lineCoords, color }: TooltipConnector
         className="connector-dot-end"
       />
     </svg>
-  )
+  );
 }

@@ -1,13 +1,13 @@
-import { OrbitInfo } from './types'
+import { OrbitInfo } from './types';
 
 interface OrbitRingProps {
-  orbit: OrbitInfo
-  index: number
-  isActive: boolean
-  totalOrbits: number
-  mousePos: { x: number; y: number }
-  onMouseEnter: (index: number, event: React.MouseEvent) => void
-  onMouseLeave: () => void
+  orbit: OrbitInfo;
+  index: number;
+  isActive: boolean;
+  totalOrbits: number;
+  mousePos: { x: number; y: number };
+  onMouseEnter: (index: number, event: React.MouseEvent) => void;
+  onMouseLeave: () => void;
 }
 
 export default function OrbitRing({
@@ -19,8 +19,8 @@ export default function OrbitRing({
   onMouseEnter,
   onMouseLeave,
 }: OrbitRingProps) {
-  const offsetX = mousePos.x * orbit.gravityFactor
-  const offsetY = mousePos.y * orbit.gravityFactor
+  const offsetX = mousePos.x * orbit.gravityFactor;
+  const offsetY = mousePos.y * orbit.gravityFactor;
 
   return (
     <div
@@ -42,14 +42,16 @@ export default function OrbitRing({
     >
       <button
         className={`satellite-dot ${isActive ? 'active' : ''}`}
-        style={{
-          '--dot-color': orbit.color,
-        } as React.CSSProperties}
+        style={
+          {
+            '--dot-color': orbit.color,
+          } as React.CSSProperties
+        }
         aria-label={`View ${orbit.category} information`}
       >
         <span className="dot-icon">{orbit.icon}</span>
         <span className="dot-pulse"></span>
       </button>
     </div>
-  )
+  );
 }

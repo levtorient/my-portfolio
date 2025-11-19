@@ -1,7 +1,7 @@
-import { Project } from './types'
+import { Project } from './types';
 
 interface ShowcaseCardProps {
-  project: Project
+  project: Project;
 }
 
 export default function ShowcaseCard({ project }: ShowcaseCardProps) {
@@ -44,5 +44,5 @@ export default function ShowcaseCard({ project }: ShowcaseCardProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }

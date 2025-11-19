@@ -1,17 +1,19 @@
-import { OrbitInfo, TooltipPosition } from './types'
+import { OrbitInfo, TooltipPosition } from './types';
 
 interface OrbitTooltipProps {
-  orbit: OrbitInfo
-  position: TooltipPosition
+  orbit: OrbitInfo;
+  position: TooltipPosition;
 }
 
 export default function OrbitTooltip({ orbit, position }: OrbitTooltipProps) {
   return (
     <div
       className={`orbit-tooltip ${position}`}
-      style={{
-        '--tooltip-color': orbit.color,
-      } as React.CSSProperties}
+      style={
+        {
+          '--tooltip-color': orbit.color,
+        } as React.CSSProperties
+      }
     >
       <h3>{orbit.category}</h3>
       <ul>
@@ -23,5 +25,5 @@ export default function OrbitTooltip({ orbit, position }: OrbitTooltipProps) {
         ))}
       </ul>
     </div>
-  )
+  );
 }

@@ -1,12 +1,12 @@
-import { FeedbackItem } from './types'
+import { FeedbackItem } from './types';
 
 interface FeedbackAvatarProps {
-  item: FeedbackItem
-  index: number
-  isActive: boolean
-  onMouseEnter: () => void
-  onMouseLeave: () => void
-  onClick: () => void
+  item: FeedbackItem;
+  index: number;
+  isActive: boolean;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  onClick: () => void;
 }
 
 export default function FeedbackAvatar({
@@ -44,5 +44,5 @@ export default function FeedbackAvatar({
         </div>
       )}
     </div>
-  )
+  );
 }

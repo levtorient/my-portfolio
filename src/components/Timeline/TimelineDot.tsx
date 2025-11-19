@@ -1,11 +1,11 @@
 interface TimelineDotProps {
-  isActive: boolean
-  year: string
-  company: string
-  onMouseEnter: (e: React.MouseEvent<HTMLButtonElement>) => void
-  onMouseLeave: () => void
-  onFocus: (e: React.FocusEvent<HTMLButtonElement>) => void
-  onBlur: () => void
+  isActive: boolean;
+  year: string;
+  company: string;
+  onMouseEnter: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  onMouseLeave: () => void;
+  onFocus: (e: React.FocusEvent<HTMLButtonElement>) => void;
+  onBlur: () => void;
 }
 
 export default function TimelineDot({
@@ -31,5 +31,5 @@ export default function TimelineDot({
       </button>
       <span className="timeline-year">{year}</span>
     </>
-  )
+  );
 }

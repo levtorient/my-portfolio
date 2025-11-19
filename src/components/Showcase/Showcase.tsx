@@ -1,6 +1,6 @@
-import { projects } from './data'
-import ShowcaseCard from './ShowcaseCard'
-import './Showcase.css'
+import { projects } from './data';
+import ShowcaseCard from './ShowcaseCard';
+import './Showcase.css';
 
 export default function Showcase() {
   return (
@@ -12,5 +12,5 @@ export default function Showcase() {
         ))}
       </div>
     </section>
-  )
+  );
 }

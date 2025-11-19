@@ -1,3 +1,3 @@
-export { default } from './FloatingIcons'
-export * from './types'
-export * from './data'
+export { default } from './FloatingIcons';
+export * from './types';
+export * from './data';

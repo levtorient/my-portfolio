@@ -1,14 +1,14 @@
-import { useParams, Link } from 'react-router-dom'
-import './BlogPost.css'
+import { useParams, Link } from 'react-router-dom';
+import './BlogPost.css';
 
 interface BlogPostData {
-  id: string
-  slug: string
-  title: string
-  date: string
-  readTime: string
-  tags: string[]
-  content: string
+  id: string;
+  slug: string;
+  title: string;
+  date: string;
+  readTime: string;
+  tags: string[];
+  content: string;
 }
 
 const blogPostsData: Record<string, BlogPostData> = {
@@ -260,11 +260,11 @@ Version your APIs:
 Following these principles will help you create APIs that are easy to use and maintain.
     `,
   },
-}
+};
 
 export default function BlogPost() {
-  const { slug } = useParams<{ slug: string }>()
-  const post = slug ? blogPostsData[slug] : null
+  const { slug } = useParams<{ slug: string }>();
+  const post = slug ? blogPostsData[slug] : null;
 
   if (!post) {
     return (
@@ -272,53 +272,59 @@ export default function BlogPost() {
         <div className="blog-post-container">
           <h1>Post Not Found</h1>
           <p>The blog post you're looking for doesn't exist.</p>
-          <Link to="/#blog" className="back-link">← Back to Blog</Link>
+          <Link to="/#blog" className="back-link">
+            ← Back to Blog
+          </Link>
         </div>
       </div>
-    )
+    );
   }
 
   const renderContent = (content: string) => {
-    const lines = content.trim().split('\n')
-    const elements: JSX.Element[] = []
-    let inCodeBlock = false
-    let codeContent = ''
-    let codeLanguage = ''
+    const lines = content.trim().split('\n');
+    const elements: JSX.Element[] = [];
+    let inCodeBlock = false;
+    let codeContent = '';
+    let codeLanguage = '';
 
     lines.forEach((line, index) => {
       if (line.startsWith('```')) {
         if (inCodeBlock) {
           elements.push(
             <pre key={index} className="code-block">
-              <code className={`language-${codeLanguage}`}>{codeContent.trim()}</code>
+              <code className={`language-${codeLanguage}`}>
+                {codeContent.trim()}
+              </code>
             </pre>
-          )
-          codeContent = ''
-          inCodeBlock = false
+          );
+          codeContent = '';
+          inCodeBlock = false;
         } else {
-          codeLanguage = line.slice(3) || 'text'
-          inCodeBlock = true
+          codeLanguage = line.slice(3) || 'text';
+          inCodeBlock = true;
         }
       } else if (inCodeBlock) {
-        codeContent += line + '\n'
+        codeContent += line + '\n';
       } else if (line.startsWith('## ')) {
-        elements.push(<h2 key={index}>{line.slice(3)}</h2>)
+        elements.push(<h2 key={index}>{line.slice(3)}</h2>);
       } else if (line.startsWith('### ')) {
-        elements.push(<h3 key={index}>{line.slice(4)}</h3>)
+        elements.push(<h3 key={index}>{line.slice(4)}</h3>);
       } else if (line.startsWith('- ')) {
-        elements.push(<li key={index}>{line.slice(2)}</li>)
+        elements.push(<li key={index}>{line.slice(2)}</li>);
       } else if (line.trim()) {
-        elements.push(<p key={index}>{line}</p>)
+        elements.push(<p key={index}>{line}</p>);
       }
-    })
+    });
 
-    return elements
-  }
+    return elements;
+  };
 
   return (
     <div className="blog-post-page">
       <div className="blog-post-container">
-        <Link to="/#blog" className="back-link">← Back to Blog</Link>
+        <Link to="/#blog" className="back-link">
+          ← Back to Blog
+        </Link>
 
         <header className="blog-post-header">
           <h1>{post.title}</h1>
@@ -329,7 +335,9 @@ export default function BlogPost() {
           </div>
           <div className="blog-post-tags">
             {post.tags.map((tag) => (
-              <span key={tag} className="blog-tag">{tag}</span>
+              <span key={tag} className="blog-tag">
+                {tag}
+              </span>
             ))}
           </div>
         </header>
@@ -339,9 +347,11 @@ export default function BlogPost() {
         </article>
 
         <footer className="blog-post-footer">
-          <Link to="/#blog" className="back-link">← Back to Blog</Link>
+          <Link to="/#blog" className="back-link">
+            ← Back to Blog
+          </Link>
         </footer>
       </div>
     </div>
-  )
+  );
 }

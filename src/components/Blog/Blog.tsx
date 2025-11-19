@@ -1,6 +1,6 @@
-import { blogPosts } from './data'
-import BlogCard from './BlogCard'
-import './Blog.css'
+import { blogPosts } from './data';
+import BlogCard from './BlogCard';
+import './Blog.css';
 
 export default function Blog() {
   return (
@@ -12,5 +12,5 @@ export default function Blog() {
         ))}
       </div>
     </section>
-  )
+  );
 }

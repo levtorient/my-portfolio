@@ -1,3 +1,3 @@
-export { default } from './Timeline'
-export * from './types'
-export * from './data'
+export { default } from './Timeline';
+export * from './types';
+export * from './data';
