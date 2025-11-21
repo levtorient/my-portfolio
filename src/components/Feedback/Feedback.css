@@ -54,54 +54,149 @@
   font-size: 28px;
 }
 
-/* Feedback Card */
-.feedback-card {
+/* Speech Bubble */
+.speech-bubble {
   position: absolute;
-  top: 70px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
+  top: 50%;
+  transform: translateY(-50%);
+  min-width: 250px;
+  max-width: 320px;
   background: rgba(13, 19, 33, 0.95);
   backdrop-filter: blur(10px);
-  border: 1px solid var(--border-color);
-  border-radius: var(--border-radius);
-  padding: 20px;
+  border: 1px solid var(--accent-primary);
+  border-radius: 20px;
+  padding: 15px 20px;
   z-index: 100;
-  animation: cardFadeIn 0.3s ease;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
 }
 
-@keyframes cardFadeIn {
+/* Bubble on right side of avatar (for left avatars) */
+.speech-bubble.bubble-right {
+  left: 80px;
+  animation: bubbleFadeInRight 0.3s ease;
+}
+
+.speech-bubble.bubble-right::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -10px;
+  transform: translateY(-50%);
+  border-width: 10px 10px 10px 0;
+  border-style: solid;
+  border-color: transparent var(--accent-primary) transparent transparent;
+}
+
+@keyframes bubbleFadeInRight {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-10px);
+    transform: translateY(-50%) translateX(-10px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(-50%) translateX(0);
   }
 }
 
-.feedback-card h3 {
-  font-size: var(--font-size-lg);
+.bubble-header {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.bubble-name {
+  font-size: var(--font-size-base);
+  font-weight: 600;
   color: var(--text-primary);
-  margin-bottom: 5px;
 }
 
-.feedback-card .role {
-  font-size: var(--font-size-sm);
+.bubble-role {
+  font-size: var(--font-size-xs);
   color: var(--accent-primary);
-  margin-bottom: 15px;
 }
 
-.feedback-card blockquote {
+.bubble-text {
   font-size: var(--font-size-sm);
   color: var(--text-secondary);
   font-style: italic;
   line-height: 1.6;
   margin: 0;
-  padding-left: 15px;
-  border-left: 2px solid var(--accent-tertiary);
+  min-height: 60px;
+}
+
+.typing-cursor {
+  animation: blink 0.7s infinite;
+  color: var(--accent-primary);
+  font-style: normal;
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Dummy Avatars */
+.dummy-avatar-wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  animation: float 6s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+.dummy-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.dummy-avatar .avatar-emoji {
+  font-size: 22px;
+  opacity: 0.6;
+}
+
+.dummy-bubble {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 40px;
+  background: rgba(13, 19, 33, 0.5);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.dummy-bubble {
+  font-size: 10px;
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.dummy-bubble::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  border-width: 8px 8px 8px 0;
+  border-style: solid;
+  border-color: transparent var(--border-color) transparent transparent;
 }
 
 /* Responsive */
@@ -119,9 +214,14 @@
     font-size: 22px;
   }
 
-  .feedback-card {
-    width: 240px;
-    padding: 15px;
+  .speech-bubble {
+    min-width: 180px;
+    max-width: 240px;
+    padding: 12px 15px;
+  }
+
+  .speech-bubble.bubble-right {
+    left: 65px;
   }
 }
 
@@ -139,8 +239,13 @@
     font-size: 20px;
   }
 
-  .feedback-card {
-    width: 200px;
+  .speech-bubble {
+    min-width: 150px;
+    max-width: 180px;
     font-size: var(--font-size-xs);
+  }
+
+  .speech-bubble.bubble-right {
+    left: 55px;
   }
 }

@@ -8,3 +8,11 @@ export interface FeedbackItem {
     top: number;
   };
 }
+
+export interface DummyAvatar {
+  avatar: string;
+  position: {
+    left: number;
+    top: number;
+  };
+}
