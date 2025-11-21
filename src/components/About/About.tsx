@@ -88,27 +88,40 @@ export default function About() {
         const dotX = iconRect.left + iconRect.width / 2 - rect.left;
         const dotY = iconRect.top + iconRect.height / 2 - rect.top;
 
-        // Keep the same tooltip position, just update line end based on current tooltipPosition
+        // Calculate tooltip position relative to container (fixed position on page edges)
+        // Connect to nearest corner of tooltip (inner corner closest to orbit)
+        const containerRect = containerRef.current.getBoundingClientRect();
+        const maxWidth = 1200; // --container-max-width
+        const padding = Math.max(40, (window.innerWidth - maxWidth) / 2);
+        const tooltipWidth = 280; // min-width of tooltip
+        const tooltipHeight = 150; // approximate height
+
         let endX: number;
         let endY: number;
 
         switch (tooltipPosition) {
           case 'bottom-right':
-            endX = rect.width + 40;
-            endY = rect.height + 40;
+            // Connect to top-left corner of tooltip (nearest to orbit)
+            endX =
+              window.innerWidth - padding - tooltipWidth - containerRect.left;
+            endY = window.innerHeight - 40 - tooltipHeight - containerRect.top;
             break;
           case 'bottom-left':
-            endX = -40;
-            endY = rect.height + 40;
+            // Connect to top-right corner of tooltip
+            endX = padding + tooltipWidth - containerRect.left;
+            endY = window.innerHeight - 40 - tooltipHeight - containerRect.top;
             break;
           case 'top-right':
-            endX = rect.width + 40;
-            endY = -40;
+            // Connect to bottom-left corner of tooltip
+            endX =
+              window.innerWidth - padding - tooltipWidth - containerRect.left;
+            endY = 120 + tooltipHeight - containerRect.top;
             break;
           case 'top-left':
           default:
-            endX = -40;
-            endY = -40;
+            // Connect to bottom-right corner of tooltip
+            endX = padding + tooltipWidth - containerRect.left;
+            endY = 120 + tooltipHeight - containerRect.top;
             break;
         }
 

@@ -2,43 +2,43 @@ import { TimelineItem } from './types';
 
 export const timelineData: TimelineItem[] = [
   {
-    year: '2024',
-    title: 'Senior Software Engineer',
-    company: 'Tech Corp',
+    year: '2019',
+    title: 'Fullstack Engineer',
+    company: 'Orient Software',
     description:
-      'Leading development of microservices architecture and mentoring junior developers.',
-    projects: ['E-commerce Platform', 'Analytics Dashboard'],
-    role: 'Tech Lead',
-    technologies: ['React', 'Node.js', 'AWS', 'PostgreSQL'],
-  },
-  {
-    year: '2022',
-    title: 'Full Stack Developer',
-    company: 'Startup Inc',
-    description:
-      'Built scalable web applications from scratch and implemented CI/CD pipelines.',
-    projects: ['SaaS Platform', 'Mobile App Backend'],
-    role: 'Full Stack Developer',
-    technologies: ['Vue.js', 'Python', 'Docker', 'MongoDB'],
-  },
-  {
-    year: '2020',
-    title: 'Frontend Developer',
-    company: 'Digital Agency',
-    description:
-      'Developed responsive web applications and improved performance metrics.',
-    projects: ['Corporate Website', 'CMS Platform'],
-    role: 'Frontend Developer',
-    technologies: ['React', 'TypeScript', 'SASS', 'Redux'],
+      'Implementing features on fintech systems using microservices and event-driven architecture. Designing services based on DDD and CQRS patterns.',
+    projects: ['Fintech Platform', 'Event-Driven Pipelines'],
+    role: 'Fullstack Engineer',
+    technologies: ['React', 'Angular', '.NET', 'Python', 'DynamoDB'],
   },
   {
     year: '2018',
-    title: 'Junior Developer',
-    company: 'IT Solutions',
+    title: 'Middle Engineer',
+    company: 'FPT Software',
     description:
-      'Started career building WordPress sites and learning modern frameworks.',
-    projects: ['Client Websites', 'Internal Tools'],
-    role: 'Junior Developer',
-    technologies: ['JavaScript', 'PHP', 'MySQL', 'WordPress'],
+      'Developed document verification logic using PHP, Python, and OpenCV to detect fake logos and signatures.',
+    projects: ['Document Verification System'],
+    role: 'Middle Engineer',
+    technologies: ['PHP', 'Python', 'OpenCV'],
+  },
+  {
+    year: '2017',
+    title: 'Middle Engineer',
+    company: 'FPT Software',
+    description:
+      'Refactored legacy .NET WPF application for latest Windows versions. Created tools to fix compilation issues and implemented unit tests.',
+    projects: ['Paper Factory Management'],
+    role: 'Middle Engineer',
+    technologies: ['.NET', 'WPF', 'Unit Testing'],
+  },
+  {
+    year: '2016',
+    title: 'Junior Java Engineer',
+    company: 'FPT Software',
+    description:
+      'Implemented custom Java Swing components for medical equipment management web application. Deployed system versions across global markets.',
+    projects: ['Medical Equipment Management'],
+    role: 'Junior Engineer',
+    technologies: ['Java', 'Java Swing'],
   },
 ];

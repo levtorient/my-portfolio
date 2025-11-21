@@ -1,0 +1,214 @@
+.floating-social {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+  overflow: hidden;
+}
+
+.floating-social-link {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color);
+  border: none;
+  color: white;
+  pointer-events: auto;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow:
+    0 0 15px var(--color),
+    0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.floating-social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.floating-social-link:hover {
+  transform: scale(1.4);
+  box-shadow:
+    0 0 25px var(--color),
+    0 0 50px var(--color);
+}
+
+/* Each icon gets unique floating path with initial position */
+.floating-social-link:nth-child(1) {
+  top: 15%;
+  left: 5%;
+  animation: floatPath1 20s ease-in-out infinite;
+}
+
+.floating-social-link:nth-child(2) {
+  top: 60%;
+  left: 3%;
+  animation: floatPath2 22s ease-in-out infinite;
+}
+
+.floating-social-link:nth-child(3) {
+  top: 80%;
+  right: 5%;
+  left: auto;
+  animation: floatPath3 18s ease-in-out infinite;
+}
+
+.floating-social-link:nth-child(4) {
+  top: 20%;
+  right: 4%;
+  left: auto;
+  animation: floatPath4 24s ease-in-out infinite;
+}
+
+.floating-social-link:nth-child(5) {
+  top: 45%;
+  right: 3%;
+  left: auto;
+  animation: floatPath5 21s ease-in-out infinite;
+}
+
+@keyframes floatPath1 {
+  0% {
+    top: 15%;
+    left: 5%;
+  }
+  25% {
+    top: 25%;
+    left: 15%;
+  }
+  50% {
+    top: 20%;
+    left: 8%;
+  }
+  75% {
+    top: 30%;
+    left: 12%;
+  }
+  100% {
+    top: 15%;
+    left: 5%;
+  }
+}
+
+@keyframes floatPath2 {
+  0% {
+    top: 60%;
+    left: 3%;
+  }
+  25% {
+    top: 70%;
+    left: 10%;
+  }
+  50% {
+    top: 65%;
+    left: 6%;
+  }
+  75% {
+    top: 55%;
+    left: 8%;
+  }
+  100% {
+    top: 60%;
+    left: 3%;
+  }
+}
+
+@keyframes floatPath3 {
+  0% {
+    top: 80%;
+    right: 5%;
+    left: auto;
+  }
+  25% {
+    top: 75%;
+    right: 12%;
+    left: auto;
+  }
+  50% {
+    top: 85%;
+    right: 8%;
+    left: auto;
+  }
+  75% {
+    top: 70%;
+    right: 6%;
+    left: auto;
+  }
+  100% {
+    top: 80%;
+    right: 5%;
+    left: auto;
+  }
+}
+
+@keyframes floatPath4 {
+  0% {
+    top: 20%;
+    right: 4%;
+    left: auto;
+  }
+  25% {
+    top: 30%;
+    right: 10%;
+    left: auto;
+  }
+  50% {
+    top: 25%;
+    right: 6%;
+    left: auto;
+  }
+  75% {
+    top: 15%;
+    right: 8%;
+    left: auto;
+  }
+  100% {
+    top: 20%;
+    right: 4%;
+    left: auto;
+  }
+}
+
+@keyframes floatPath5 {
+  0% {
+    top: 45%;
+    right: 3%;
+    left: auto;
+  }
+  25% {
+    top: 50%;
+    right: 8%;
+    left: auto;
+  }
+  50% {
+    top: 40%;
+    right: 5%;
+    left: auto;
+  }
+  75% {
+    top: 55%;
+    right: 10%;
+    left: auto;
+  }
+  100% {
+    top: 45%;
+    right: 3%;
+    left: auto;
+  }
+}
+
+/* Hide on small screens to avoid clutter */
+@media (max-width: 768px) {
+  .floating-social {
+    display: none;
+  }
+}

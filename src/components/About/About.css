@@ -211,25 +211,27 @@
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Tooltip corner positions - outside outermost orbit ring */
-.orbit-tooltip.top-left {
-  top: -60px;
-  left: -60px;
-}
-
-.orbit-tooltip.top-right {
-  top: -60px;
-  right: -60px;
-}
-
+/* Tooltip corner positions - fixed to page edges, aligned with nav container */
+.orbit-tooltip.top-left,
 .orbit-tooltip.bottom-left {
-  bottom: -60px;
-  left: -60px;
+  position: fixed;
+  left: max(40px, calc((100vw - var(--container-max-width)) / 2));
 }
 
+.orbit-tooltip.top-right,
 .orbit-tooltip.bottom-right {
-  bottom: -60px;
-  right: -60px;
+  position: fixed;
+  right: max(40px, calc((100vw - var(--container-max-width)) / 2));
+}
+
+.orbit-tooltip.top-left,
+.orbit-tooltip.top-right {
+  top: 120px;
+}
+
+.orbit-tooltip.bottom-left,
+.orbit-tooltip.bottom-right {
+  bottom: 40px;
 }
 
 @keyframes fadeIn {
